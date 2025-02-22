@@ -5,19 +5,43 @@
 <div class="grid-container-main">
     
     <div class="mainphoto">
-        <div class="textbox-main">
-            <h2>UnitedBanking is Secure</h2>
-            <p>Learn how we keep your data safe. We ensure that your data is protected and is never sold</p>
-            <button class="btn btn-custom">Learn More</button>
+        <div class="mySlides fade">
+            <img src="~/img/bankmain.jpg">
+            <div class="textbox-main-1">
+                <h2>UnitedBanking is Secure</h2>
+                <p>Learn how we keep your data safe. We ensure that your data is protected and is never sold</p>
+                <button class="btn btn-custom">Learn More</button>
+            </div>
         </div>
-        <img src="/img/bankmain.jpg" alt="A sample image">
-    </div>
-    
-        
-    <div class="secondrowbar">
-        
-    </div>
 
-   
+        <div class="mySlides fade">
+            <img src="~/img/bankmain2.png">
+            <div class="textbox-main-2">
+                <h2>We Ensure Savings</h2>
+                <p>Our great rates ensure that you get the results you want from any kind of account that you open</p>
+                <button class="btn btn-custom">Save Now</button>
+            </div>
+        </div>
+
+        <div class="mySlides fade">
+            <img src="~/img/bankmain3.png" class="image3main">
+            <div class="textbox-main-3">
+                <h2>We Can Help</h2>
+                <p>Learn ways to finance your house so you can achieve your dream home</p>
+                <button class="btn btn-custom">Learn More</button>
+            </div>
+        </div>
+
+        <!-- Next and previous buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+        <div class="dot-container">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+    </div>
 </div>
     
+<script src="/js/site.js"></script>
