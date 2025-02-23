@@ -392,7 +392,14 @@ body {
     grid-template-rows: auto ;
     grid-template-areas:
         "signup-text signup-photo"
+}
 
+.grid-container-signin {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "signup-text signin-photo"
 }
 .form-control{
     width: 60%;
@@ -410,6 +417,12 @@ body {
     object-fit: cover;
 }
 
+.signin-photo {
+    grid-area: signin-photo;
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+}
 /*Css for banking page*/
 .flex-container-banking{    
     display:flex;
