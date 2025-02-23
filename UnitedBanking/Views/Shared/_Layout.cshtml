@@ -12,7 +12,7 @@
 <body>   
     <div class="grid-container">
         <div class="header">
-            <nav class="navbar navbar-expand-lg custom-navbar border-bottom box-shadow">
+            <nav class="navbar navbar-expand-lg custom-navbar border-bottom box-shadow ">
                 <div class="container-fluid">
                     <a class="navbar-brand ms-5 text-custom-color" asp-area="" asp-controller="Home" asp-action="Index"><i class="fa-solid fa-feather-pointed fa-icon"></i> UnitedBanking</a>
 
@@ -33,12 +33,11 @@
                                     <li><a class="dropdown-item" href="#">UB Sport</a></li>
                                 </ul>
                             </li>
-                                
-                         
+                                                      
                                 <li class="nav-item dropdown ms-4">
                                     <span class="nav-link dropdown-toggle text-custom-color">Banking </span>
                                     <ul class="dropdown-menu" aria-labelledby="BankingDropdown">
-                                        <li class="title">Credit Cards</li>
+                                        <li class="title">Savings</li>
                                         <hr />  
                                         <li><a class="dropdown-item" href="#">IRAs</a></li>
                                         <li><a class="dropdown-item" href="#">CDs</a></li>
@@ -53,56 +52,44 @@
                             } *@
                             <li class="nav-item ms-4"><a class="nav-link text-custom-color" style="cursor: pointer !important" asp-area="" asp-controller="Employees" asp-action="Index" a>Employees</a></li>
                         </ul>
+
                         <ul class="navbar-nav ms-auto">
-                            <li class="nav-item ms-4"><a class="nav-link dropdown-toggle text-custom-color" asp-area="" asp-controller="Home" asp-action="Help">Help</a></li>
-                            <li class="nav-item ms-4"><a class="nav-link dropdown-toggle text-custom-color text-nowrap" asp-area="" asp-controller="Home" asp-action="AboutUs">About Us</a></li>
+                            <li class="nav-item dropdown ms-4">
+                                <span class="nav-link dropdown-toggle text-custom-color">Help</span>
+                                <ul class="dropdown-menu" aria-labelledby="HelpDropdown">
+                                    <li><a class="dropdown-item" href="#">Contact Us</a></li>
+                                    <li><a class="dropdown-item" href="#">Fraud Center</a></li>
+                                    <li><a class="dropdown-item" href="#">Common Issues</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item dropdown ms-4">
+                                <span class="nav-link dropdown-toggle text-custom-color">About Us</span>
+                                <ul class="dropdown-menu" aria-labelledby="AboutDropdown">
+                                    <li><a class="dropdown-item" href="#">Work For Us</a></li>
+                                    <li><a class="dropdown-item" href="#">Why UnitedBanking</a></li>
+                                    <li><a class="dropdown-item" href="#">About Our Company</a></li>
+                                </ul>
+                            </li>
+
                             <li class="nav-item ms-4"><button class="nav-link btn btn-custom text-nowrap" onclick="location.href='@Url.Action("Login", "Auth")'">Login <i class="fa-solid fa-circle-user"></i></button></li>
                         </ul>
                     </div>
                 </div>
             </nav>
         </div>
-      </div>
-        @* <nav class="navbar navbar-expand-sm custom-navbar border-bottom box-shadow mb-3";
-            <div class="container-fluid">
-                <a class="navbar-brand text-custom-green" asp-area="" asp-controller="Home" asp-action="Index">UnitedBanking</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-custom-green" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-custom-green" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                        @if (User.Identity.IsAuthenticated && (User.IsInRole("Admin")))
-                        {
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Employees">Employees</a>
-                            </li>
-                        }
-                        <li class="nav-item ms-auto">
-                             <form method="get" asp-controller="Auth" asp-action="Login">
-                                <button type="submit" class="btn btn-custom">Login/Signup</button>
-                             </form>
-                        </li>
+     
 
-                    </ul>
-                </div>
-            </div>
-        </nav> *@
-
-    <main class="main">
-        @RenderBody()
-    </main>
+        <div class="main">
+            @RenderBody()
+        </div>
 
 
-    <footer class="footer">
-        &copy; 2025 - UnitedBanking - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-    </footer>
+        <footer class="footer">
+            &copy; 2025 - UnitedBanking - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </footer>
+
+    </div>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

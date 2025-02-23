@@ -14,7 +14,7 @@
 }
 
 html {
-  font-size: 14px;
+    
 }
 
 @media (min-width: 768px) {
@@ -28,8 +28,9 @@ html {
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
+    font-size: 14px;
 }
 
 body {
@@ -46,7 +47,9 @@ body {
     grid-template-areas: 
         "header header "
         "main main "
-        "footer footer " 
+        "footer footer "
+
+
 }
 
 .header {
@@ -144,12 +147,12 @@ body {
 .grid-container-main {
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: auto auto;
+    grid-template-rows: auto 400px;
     grid-template-areas:
         "mainphoto"
         "secondrowbar "
         "third-row-photo";
-    overflow-y:auto;
+
 }
 
 .intro {
@@ -215,7 +218,7 @@ body {
 
 .dot-container {
     position: absolute;
-    z-index: 100;
+    z-index: 20;
     text-align: center
 }
 
@@ -234,7 +237,6 @@ body {
     background-color: #717171;
 }
 
-/* Fading animation */
 .fade {
     animation-name: fade;
     animation-duration: 2s;
@@ -249,38 +251,13 @@ body {
 
     to {
         opacity: 1;
-        visibility: 
+        visibility: 1;
     }
 }
 
 .mainphoto .image3main{
     object-position:center;
 }
-/*
-.mainphoto {
-    grid-area: mainphoto;
-    position: relative;
-    height: 500px;
-}
-
-.mainphoto img {
-    width: 100%;
-    height:500px;
-    object-position: top;
-    object-fit: cover;
-    position: absolute;
-}
-
-.textbox-main {
-    position: absolute;
-    top: 30%;
-    left: 22%;
-    width: 25%;
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 10px;
-    border-radius: 5px;
-    z-index: 5;
-}*/
 
 .dot-container {
     position: absolute;
@@ -306,10 +283,96 @@ body {
 }
 
 .secondrowbar {
-    grid-area: second-row-main;
-    background-color:
+    grid-area: secondrowbar;
+    background-color: #f0f3f5;
+    min-width: 100%;
+    position: relative;
+    overflow-x: auto !important;
+    box-sizing:border-box;
+
 }
 
+.herocontainer {
+    display: grid;
+    grid-template-columns: 80% 20%;
+    grid-template-rows: 50% 50%;
+    grid-template-areas:
+        "hero-header hero-icon"
+        "hero-body hero-link";
+    width: 400px;
+    height: 200px;
+    color: black;
+    text-decoration: none;
+    position: absolute;
+    background-color: white;
+    border-radius: 30px;
+    padding: 20px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+
+}
+
+.herocontainer1 {
+    top: 27%;
+    left: 5%;
+}
+
+.herocontainer2 {
+    top: 27%;
+    left: 37%;
+}
+.herocontainer2 .hero-body{
+    position:absolute;
+    top:-40%;
+}
+
+.herocontainer2 .hero-icon{
+    position:absolute;
+    left:15%;
+    font-size:47px;
+}
+
+.herocontainer3 {
+    top: 27%;
+    left: 68%;
+}
+
+.herocontainer3 .hero-body{
+    position:absolute;
+    top:-50%;
+}
+
+.herocontainer:hover{
+    color:inherit;
+}
+
+    .herocontainer:hover .hero-link {
+        color: #00abe7;
+    }
+
+
+.hero-header{
+    grid-area:hero-header;
+    font-size:32px;
+}
+
+.hero-icon {
+    grid-area: hero-icon;
+    font-size: 45px;
+}
+
+.hero-body {
+    grid-area: hero-body;
+    font-size: 16px;
+}
+
+.hero-link{
+    position:absolute;
+    grid-area:hero-link;
+    font-size:30px;
+    top:20%;
+    left:40%;
+    color:black;
+}
 
 
 .third-row-main {
@@ -345,4 +408,18 @@ body {
     width: 100%;
     height: auto;
     object-fit: cover;
+}
+
+/*Css for banking page*/
+.flex-container-banking{    
+    display:flex;
+}
+
+.cardcontainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "columnonecard columntwocard columnthreecard";
+    border-color
+
 }
