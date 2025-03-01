@@ -4,11 +4,17 @@
 @{
     ViewData["Title"] = "Signup";
 }
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class="alert alert-danger">
+        @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+    </div>
+}
 <div class="grid-container-signup">
     <div class="signup-text">
         <h1>Signup</h1>
         <h4>Take control of your finances with UnitedBanking!</h4>
-        <form asp-action="Register" method="post">
+        <form asp-action="Signup" method="post">
             <fieldset>
                 <p>
                     <label for="Username">Username: </label>
@@ -28,9 +34,10 @@
                 <p>
                     <label for="ConfirmPassword">Confirm Password:</label>
                     <input type="password" id="ConfirmPassword" name="ConfirmPassword" class="form-control" />
+                    
                 </p>
 
-                <button type="submit" class="btn btn-custom">Register</button>
+                <button type="submit" class="btn btn-custom">Sign Up</button>
             </fieldset>
 
             <hr>

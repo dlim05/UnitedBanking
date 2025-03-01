@@ -8,8 +8,9 @@ let slideIndex = 1;
 showSlides(slideIndex);
 
 // Next/previous controls
-function plusSlides(n) {
-    showSlides(slideIndex += n);
+function plusSlides() {
+
+    showSlides(slideIndex += 1);
 }
 
 // Thumbnail image controls
@@ -29,8 +30,8 @@ function showSlides(n) {
     for (i = 0; i < dots.length; i++) {
         dots[i].className = dots[i].className.replace(" active", "");
     }
-    slides[slideIndex - 1].style.display = "block";
+        slides[slideIndex - 1].style.display = "block";
     dots[slideIndex - 1].className += " active";
-
 }
 
+setInterval(plusSlides, 7000);

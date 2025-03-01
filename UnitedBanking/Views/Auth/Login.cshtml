@@ -5,11 +5,17 @@
     ViewData["Title"] = "Login";
 }
 
+@if (!ViewData.ModelState.IsValid)
+{
+    <div asp-validation-summary="All" class="alert alert-danger"></div>
+}
+
+
 <div class="grid-container-signin">
     <div class="signup-text">
         <h1>Login</h1>
         <h4>Welcome Back!</h4>
-        <form asp-action="Register" method="post">
+        <form asp-action="Login" method="post">
             <fieldset>
                 <p>
                     <label for="Username">Username: </label>
@@ -21,7 +27,7 @@
                     <input type="password" id="Password" name="Password" class="form-control" />
                 </p>
 
-                <button type="submit" class="btn btn-custom">Register</button>
+                <button type="submit" class="btn btn-custom">Login</button> 
             </fieldset>
 
             <hr>

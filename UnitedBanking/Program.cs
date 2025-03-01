@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using System;
 using UnitedBanking.Context;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,6 +20,7 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>()
 
 var app = builder.Build();
 
+
 using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
@@ -27,8 +30,6 @@ using (var scope = app.Services.CreateScope())
     // Roles you want to ensure exist in the database
     string[] roleNames = { "Admin", "Manager", "Employee", "Customer" };
 }
-
-
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

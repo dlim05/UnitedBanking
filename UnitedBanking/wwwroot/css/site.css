@@ -13,10 +13,6 @@
     white-space: nowrap;
 }
 
-html {
-    
-}
-
 @media (min-width: 768px) {
   html {
     font-size: 16px;
@@ -35,21 +31,22 @@ html {
 
 body {
     margin-bottom: 60px;
-   background-color:#FEFFFE;
+    background-color: #FEFFFE;
     height: 100%;
+    min-width: 465.5px;
+    overflow-x: hidden;
 }
 
 /*css for setting up each page and the navbar*/
-.grid-container{
-    display:grid;
-    grid-template-columns: 50% 50%  ;
-    grid-template-rows: 70px;
-    grid-template-areas: 
+.grid-container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 70px 100% 70px;
+    grid-template-areas:
         "header header "
         "main main "
-        "footer footer "
-
-
+        "footer footer ";
+    
 }
 
 .header {
@@ -93,7 +90,6 @@ body {
     padding-left: 20px;
     padding-right: 20px;
     min-height: 100%;
-
 }
 
 .dropdown-menu {
@@ -101,8 +97,6 @@ body {
     border-bottom: 2px solid #ac6e04;
     padding:20px;
 }
-
-
 
 .dropdown-menu .dropdown-item {
     color: #050609;
@@ -127,7 +121,6 @@ body {
     height: 100vh; 
     overflow-y: auto; 
     transition: height 0.5s ease-in-out;
-
 }
 
 .nav-item:hover .nav-link {
@@ -136,11 +129,14 @@ body {
     text-decoration-color: #ac6e04;
 }
 
-.nav-link {
+.nav-link { 
     cursor: default; 
     font-weight: 500;
 }
 
+.profile-icon{
+    font-size:20px;
+}
 
 /*Css for Main Page*/
 
@@ -152,7 +148,6 @@ body {
         "mainphoto"
         "secondrowbar "
         "third-row-photo";
-
 }
 
 .intro {
@@ -179,7 +174,6 @@ body {
 .mySlides {
     display: none;
 }
-
 
 .textbox-main-1 {
     position: absolute;
@@ -289,7 +283,6 @@ body {
     position: relative;
     overflow-x: auto !important;
     box-sizing:border-box;
-
 }
 
 .herocontainer {
@@ -308,7 +301,6 @@ body {
     border-radius: 30px;
     padding: 20px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
-
 }
 
 .herocontainer1 {
@@ -345,10 +337,9 @@ body {
     color:inherit;
 }
 
-    .herocontainer:hover .hero-link {
-        color: #00abe7;
-    }
-
+.herocontainer:hover .hero-link {
+    color: #00abe7;
+}
 
 .hero-header{
     grid-area:hero-header;
@@ -374,7 +365,6 @@ body {
     color:black;
 }
 
-
 .third-row-main {
     grid-area: third-row-main;
 }
@@ -383,9 +373,7 @@ body {
     grid-area: third-row-photo;
 }
 
-
 /*Css for signup page*/
-
 .grid-container-signup {
     display: grid;
     grid-template-columns: 50% 50%;
@@ -401,6 +389,7 @@ body {
     grid-template-areas:
         "signup-text signin-photo"
 }
+
 .form-control{
     width: 60%;
 }
@@ -423,16 +412,76 @@ body {
     height: 100%;
     object-fit: cover;
 }
+
 /*Css for banking page*/
 .flex-container-banking{    
     display:flex;
+    margin-top:20px;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
 }
 
 .cardcontainer {
     display: grid;
+    max-width:80%;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
     grid-template-areas: "columnonecard columntwocard columnthreecard";
-    border-color
+    border-color: black;
+    border-radius: 30px;
+    padding: 20px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    left:20%;
+}
 
+/*CSS for Account*/
+.grid-container-account{
+    display:grid;
+    grid-template-columns:250px 80%;
+    grid-template-rows: auto;
+    grid-template-areas:"profilesidebar main-account";  
+}
+
+.profilesidebar {
+    grid-area: profilesidebar;
+    background-color: #eff3f6;
+    height:250px;
+    border-radius:20px;
+    /*margin-top:20px;
+    margin-left:20px;
+    margin-bottom:20px;*/
+    margin:20px;
+    padding-top:10px;
+    position:sticky;
+}
+
+.profilesidebar h2{ 
+    padding-top:5px;
+    padding-left:10px
+}
+
+ul{
+    list-style-type:none;
+    padding:0px;
+}
+
+li a {
+    display: block;
+    color: black;
+    text-decoration: none;
+    padding:10px;
+}
+
+li a:hover{
+    background-color:#cbced1;
+    color:inherit;
+}
+
+.profilesidebar form{
+    padding-left:5px;
+}
+
+.main-account{
+    grid-area:main-account;
 }

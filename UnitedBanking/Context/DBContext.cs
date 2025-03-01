@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using UnitedBanking.Models;
+
 namespace UnitedBanking.Context
 {
     public class ApplicationDbContext : IdentityDbContext<IdentityUser>
@@ -11,7 +12,7 @@ namespace UnitedBanking.Context
         {
 
         }
-        //
+        
         public DbSet<Employees> Employees { get; set; }
     
     }

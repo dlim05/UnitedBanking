@@ -1,0 +1,25 @@
+﻿
+@{
+    Layout = "_Layout";
+}
+
+<div class="grid-container-account">
+    <nav class="profilesidebar">
+        <h2>Account</h2>
+        <ul>
+            <li><a asp-controller="Account" asp-action="Profile">Profile</a></li>
+            <li> <a href="#">Transactions</a></li>
+            <li><a href="#">Settings</a></li>
+        </ul>
+        <form asp-controller="Auth" asp-action="Logout" method="post">
+            <button type="submit" class="btn btn-danger">Logout</button>
+        </form>
+    </nav>
+
+    <div class="main-account">
+        @RenderBody()
+    </div>
+</div>
+
+
+
