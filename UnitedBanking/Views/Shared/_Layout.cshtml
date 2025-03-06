@@ -48,15 +48,15 @@
                                 </li>
                             @* @if (User.Identity.IsAuthenticated && (User.IsInRole("Admin")))
                             {
-                                <li class="nav-item ms-4"><a class="nav-link text-custom-color" asp-area="" asp-controller="Employees" asp-action="Index" a>Employees</a></li>
+                            <li class="nav-item ms-4"><a class="nav-link text-custom-color navbar-link-custom" asp-area="" asp-controller="Employees" asp-action="Index" a>Employees</a></li>
                             } *@
-                            <li class="nav-item ms-4"><a class="nav-link text-custom-color" style="cursor: pointer !important" asp-area="" asp-controller="Employees" asp-action="Index" a>Employees</a></li>
+                            <li class="nav-item ms-4"><a class="nav-link text-custom-color navbar-link-custom" style="cursor: pointer !important" asp-area="" asp-controller="Employees" asp-action="Index" a>Employees</a></li>
                         </ul>
 
                         <ul class="navbar-nav ms-auto">
                             <li class="nav-item dropdown ms-4">
                                 <span class="nav-link dropdown-toggle text-custom-color">Help</span>
-                                <ul class="dropdown-menu" aria-labelledby="HelpDropdown">
+                                <ul class="dropdown-menu dropdown-custom" aria-labelledby="HelpDropdown">
                                     <li><a class="dropdown-item" href="#">Contact Us</a></li>
                                     <li><a class="dropdown-item" href="#">Fraud Center</a></li>
                                     <li><a class="dropdown-item" href="#">Common Issues</a></li>
@@ -65,7 +65,7 @@
 
                             <li class="nav-item dropdown ms-4">
                                 <span class="nav-link dropdown-toggle text-custom-color">About Us</span>
-                                <ul class="dropdown-menu" aria-labelledby="AboutDropdown">
+                                <ul class="dropdown-menu dropdown-custom" aria-labelledby="AboutDropdown">
                                     <li><a class="dropdown-item" href="#">Work For Us</a></li>
                                     <li><a class="dropdown-item" href="#">Why UnitedBanking</a></li>
                                     <li><a class="dropdown-item" href="#">About Our Company</a></li>
@@ -80,7 +80,7 @@
                             @if (User.Identity.IsAuthenticated)
                             {
                                 <li class="nav-item dropdown ms-4">
-                                    <a asp-controller="Account" asp-action="Profile" class="nav-link text-custom-color" style="cursor:pointer;background-color:inherit"><i class="fa-solid fa-circle-user profile-icon"></i></a>
+                                    <a asp-controller="Account" asp-action="Profile" class="nav-link text-custom-color navbar-link-custom"><i class="fa-solid fa-circle-user profile-icon"></i></a>
                                 </li>
                             }                         
                         </ul>

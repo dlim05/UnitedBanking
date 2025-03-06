@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using UnitedBanking.Context;
 
@@ -11,9 +12,11 @@ using UnitedBanking.Context;
 namespace UnitedBanking.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250305182213_BalanceModel")]
+    partial class BalanceModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -218,31 +221,6 @@ namespace UnitedBanking.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens", (string)null);
-                });
-
-            modelBuilder.Entity("UnitedBanking.Models.Balance", b =>
-                {
-                    b.Property<int>("BalanceId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("BalanceId"));
-
-                    b.Property<int>("BalanceAmount")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TransactionAmount")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TransactionDate")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TransactionName")
-                        .HasColumnType("int");
-
-                    b.HasKey("BalanceId");
-
-                    b.ToTable("Balance");
                 });
 
             modelBuilder.Entity("UnitedBanking.Models.Employees", b =>

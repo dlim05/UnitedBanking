@@ -1,0 +1,30 @@
+﻿@model IEnumerable<UnitedBanking.Models.Balance>
+
+@{
+    Layout = "_AccountSidebar";
+}
+
+<h2 class="Title"></h2>
+<div class="grid-account-balance">
+    <h3 class="balanceLabel">Account Balance</h3>
+    <p class="balanceAmount">$21</p>
+
+    <h4 class="transactionTitle">Recent Transactions</h4>
+    <table class="transactionTable">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Recent Transactions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model) {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.TransactionName)</td>
+                    <td>@Html.DisplayFor(modelItem => item.TransactionDate)</td>
+                    <td>@Html.DisplayFor(modelItem => item.TransactionAmount)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>

@@ -14,6 +14,8 @@ namespace UnitedBanking.Context
         }
         
         public DbSet<Employees> Employees { get; set; }
+
+        public DbSet<Balance> Balance { get; set; }
     
     }
         

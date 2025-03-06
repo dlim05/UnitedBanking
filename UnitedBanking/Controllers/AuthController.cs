@@ -19,7 +19,6 @@ namespace UnitedBanking.Controllers
         }
 
 
-
         public IActionResult Login()
         {
             return View();
@@ -45,11 +44,13 @@ namespace UnitedBanking.Controllers
                 return View(model); // Return with an error if the passwords don't match
             }
 
+
             var user=new IdentityUser { UserName=model.Username, Email=model.Email};
             var result=await _userManager.CreateAsync(user,model.Password);
 
             if (result.Succeeded)
             {
+                await _userManager.AddToRoleAsync(user, "Customer");
                 await _signInManager.SignInAsync(user, isPersistent: false);
                 return RedirectToAction("Index", "Home"); // Redirect to home page
             }

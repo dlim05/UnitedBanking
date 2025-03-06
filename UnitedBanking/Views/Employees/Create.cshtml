@@ -52,6 +52,17 @@
             </div>
         </form>
     </div>
+
+    <div class="searchUsers">
+        <h2>Search for an Employee</h2>
+        <form asp-action="Search" asp-controller="Auth">
+            <div class="form-group">               
+                <input class="form-control" placeholder="E.g. dan@email.com" />
+            </div>
+
+            <button type="submit" class="btn btn-custom">Search</button>
+        </form>
+    </div>
 </div>
 
 <div>
